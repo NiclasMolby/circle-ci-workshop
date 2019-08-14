@@ -1,3 +1,3 @@
 FROM openjdk:8
-COPY *.jar home/
+COPY gildedrose-*.jar home/
 ENTRYPOINT ["ls"]
