@@ -28,9 +28,9 @@ jobs:
           path: build/libs
           destination: jar-file
       - persist_to_workspace:
-          - root: .
-          - paths:
-              - build/libs
+          root: build/libs
+          paths:
+              - .
 workflows:
   version: 2
   app_workflow:
