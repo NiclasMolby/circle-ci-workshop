@@ -22,7 +22,7 @@ jobs:
           path: build/libs
           destination: jar-file
 workflows:
-  version: 2.0
+  version: 2
   app_workflow:
     jobs:
       - test
