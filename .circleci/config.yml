@@ -31,6 +31,9 @@ jobs:
           root: build/libs
           paths:
               - .
+      - run:
+          name: Test
+          command: ls
   deploy:
     machine: true
     steps:
