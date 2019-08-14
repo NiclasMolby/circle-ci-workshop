@@ -31,6 +31,15 @@ jobs:
           root: build/libs
           paths:
               - .
+deploy:
+  machine: true
+  steps:
+    - attach_workspace:
+      at: .
+    - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+    - run: docker build -t $DOCKER_USER/cci-workshop:latest .
+    - run: docker push $DOCKER_USER/cci-workshop:latest
+
 workflows:
   version: 2
   app_workflow:
@@ -39,3 +48,6 @@ workflows:
       - package:
           requires:
               - test
+      - deploy:
+        requires:
+          - package
