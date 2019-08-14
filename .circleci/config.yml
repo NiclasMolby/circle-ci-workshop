@@ -38,7 +38,8 @@ jobs:
     machine: true
     steps:
       - attach_workspace:
-          at: .
+          at: build/libs
+      - run: ls
       - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run: docker build -t $DOCKER_USER/cci-workshop:latest .
       - run: docker push $DOCKER_USER/cci-workshop:latest
