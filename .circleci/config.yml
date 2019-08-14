@@ -12,7 +12,8 @@ jobs:
           path: build/test-results
       - persist_to_workspace:
           root: .
-          paths: "."
+          paths:
+              - .
 
   package:
     docker:
@@ -28,7 +29,8 @@ jobs:
           destination: jar-file
       - persist_to_workspace:
           - root: build/libs
-          - paths: "."
+          - paths:
+              - .
 workflows:
   version: 2
   app_workflow:
