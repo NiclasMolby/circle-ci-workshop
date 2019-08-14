@@ -26,4 +26,6 @@ workflows:
   app_workflow:
     jobs:
       - test
-      - package
+      - package:
+          requires:
+              - test
