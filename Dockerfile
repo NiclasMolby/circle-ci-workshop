@@ -1,3 +1,3 @@
 FROM openjdk:8
-COPY . .
+COPY *.jar home/
 ENTRYPOINT ["ls"]
